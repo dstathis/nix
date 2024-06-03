@@ -1,0 +1,68 @@
+{ config, lib, pkgs, ... }:
+
+{
+  imports =
+    [
+      /etc/nixos/hardware-configuration.nix
+    ];
+
+  # Boot Config
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  # Remember to change the UUID
+  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/78620296-87e5-4e1d-8a75-97a7ea5bc0b1";
+
+  # Networking
+  networking.hostName = "enterprise";
+  networking.networkmanager.enable = true;
+  time.timeZone = "Europe/Athens";
+
+  # Window Manager
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Users
+  users.users.dylan = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "lxd" "libvirtd" ];
+  };
+
+  # Apps
+  programs.hyprland.enable = true;
+  virtualisation.lxd.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    wget
+    brave
+    firefox # Good to have a backup
+    kitty
+    wofi
+    waybar
+    dunst
+    pipewire
+    wireplumber
+    xdg-desktop-portal-hyprland
+    polkit-kde-agent
+    nwg-displays
+    wlr-randr
+    networkmanagerapplet
+    pavucontrol
+    killall
+    parted
+  ];
+
+  security.sudo.wheelNeedsPassword = false;
+
+  system.copySystemConfiguration = true;
+
+  # Original install version. Set accordingly and never change
+  system.stateVersion = "23.11";
+
+}
+
