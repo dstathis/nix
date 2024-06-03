@@ -25,6 +25,10 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "lxd" "libvirtd" ];
   };
+  users.users.c = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "lxd" "libvirtd" ];
+  };
 
   # Apps
   programs.hyprland.enable = true;
@@ -52,6 +56,7 @@
     pavucontrol
     killall
     parted
+    procps
   ];
 
   security.sudo.wheelNeedsPassword = false;
