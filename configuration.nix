@@ -3,15 +3,12 @@
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Boot Config
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Remember to change the UUID
-  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/78620296-87e5-4e1d-8a75-97a7ea5bc0b1";
 
   # Networking
   networking.hostName = "enterprise";
@@ -62,7 +59,6 @@
   system.copySystemConfiguration = true;
 
   # Original install version. Set accordingly and never change
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
 }
-
