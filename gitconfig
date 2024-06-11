@@ -1,0 +1,19 @@
+[user]
+	name = Dylan Stephano-Shachter
+	email = dylan@theone.ninja
+	signingkey = 059C7AE8654E4877BDF117A06CB7F27DB4F4C598
+[alias]
+        cc      = commit -m
+	st	= status
+	br	= branch
+	cdiff	= diff --cached
+	out	= "!f() { git fetch -q && git log --pretty=oneline --abbrev-commit --graph @{u}.. $@ ; }; f"
+	in	= "!f() { git fetch -q && git log --pretty=oneline --abbrev-commit --graph ..@{u} $@ ; }; f"
+	unstash	= stash apply
+	pullup	= !git pull --ff-only origin $(git branch --show-current) && git push
+[commit]
+	gpgsign	= true
+[log]
+	showSignature	= true
+[init]
+	defaultBranch = main

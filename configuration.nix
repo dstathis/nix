@@ -32,9 +32,12 @@
 
   # Apps
   programs.hyprland.enable = true;
+  programs.virt-manager.enable = true;
+
+  # VMs
   virtualisation.lxd.enable = true;
   virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  networking.firewall.trustedInterfaces = [ "lxdbr0" ];
 
   environment.systemPackages = with pkgs; [
     vim
@@ -57,6 +60,7 @@
     killall
     parted
     procps
+    gnupg
   ];
 
   security.sudo.wheelNeedsPassword = false;
