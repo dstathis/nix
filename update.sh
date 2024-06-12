@@ -17,7 +17,7 @@ while [ "$#" -gt 1 ]; do
 done
 
 sudo cp configuration.nix /etc/nixos/configuration.nix
-if [ ! -z REBUILD ]; then
+if [ ! -z ${REBUILD} ]; then
     sudo nixos-rebuild switch
 fi
 sudo -u dylan mkdir -p ${ROOT}/home/dylan/.config/hypr
