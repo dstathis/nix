@@ -61,6 +61,7 @@
     parted
     procps
     gnupg
+    python3
   ];
 
   security.sudo.wheelNeedsPassword = false;

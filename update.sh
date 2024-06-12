@@ -4,7 +4,7 @@ set -x
 
 ROOT=/
 
-while [ "$#" -gt 1 ]; do
+while [ "$#" -ge 1 ]; do
     case $1 in
         --rebuild)
             REBUILD=yes
