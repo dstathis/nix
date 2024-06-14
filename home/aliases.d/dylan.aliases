@@ -1,0 +1,23 @@
+alias ls='ls -lah --color=auto'
+alias less='less -r'
+alias vim='vim -O'
+alias fin='find . -name'
+alias please='sudo $(fc -ln -1)'
+alias s='sudo'
+
+cd () {
+        if [ -z $@ ]; then
+                pushd ${HOME} > /dev/null
+        else
+                pushd $@ > /dev/null
+        fi
+}
+alias p='popd'
+
+virsh () {
+	if [ "$1" == "list" ]; then
+		command virsh "$@" --all
+	else
+		command virsh "$@"
+	fi
+}
