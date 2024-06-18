@@ -31,8 +31,10 @@
   };
 
   # Apps
+  nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true;
   programs.virt-manager.enable = true;
+  programs.steam.enable = true;
 
   # VMs
   virtualisation.lxd.enable = true;
