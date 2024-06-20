@@ -30,6 +30,14 @@
     extraGroups = [ "wheel" "lxd" "libvirtd" ];
   };
 
+  # Printing
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
   # Apps
   nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true;
