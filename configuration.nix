@@ -50,29 +50,29 @@
   networking.firewall.trustedInterfaces = [ "lxdbr0" ];
 
   environment.systemPackages = with pkgs; [
-    vim
-    git
-    wget
     brave
-    firefox # Good to have a backup
-    kitty
-    wofi
-    waybar
     dunst
-    pipewire
-    wireplumber
-    xdg-desktop-portal-hyprland
-    polkit-kde-agent
-    nwg-displays
-    wlr-randr
-    networkmanagerapplet
-    pavucontrol
-    killall
-    parted
-    procps
-    gnupg
-    python3
+    firefox # Good to have a backup
+    git
     gnome.gnome-screenshot
+    gnupg
+    killall
+    kitty
+    networkmanagerapplet
+    nwg-displays
+    parted
+    pavucontrol
+    pipewire
+    polkit-kde-agent
+    procps
+    python3
+    vim
+    waybar
+    wget
+    wireplumber
+    wlr-randr
+    wofi
+    xdg-desktop-portal-hyprland
   ];
 
   security.sudo.wheelNeedsPassword = false;
