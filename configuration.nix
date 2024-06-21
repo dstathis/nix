@@ -72,6 +72,7 @@
     procps
     gnupg
     python3
+    gnome.gnome-screenshot
   ];
 
   security.sudo.wheelNeedsPassword = false;
