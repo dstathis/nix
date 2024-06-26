@@ -66,6 +66,7 @@
     polkit-kde-agent
     procps
     python3
+    spotify
     vim
     waybar
     wget
