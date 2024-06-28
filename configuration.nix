@@ -58,6 +58,7 @@
     gnupg
     killall
     kitty
+    libreoffice
     networkmanagerapplet
     nwg-displays
     parted
