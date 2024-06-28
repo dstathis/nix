@@ -51,6 +51,7 @@
 
   environment.systemPackages = with pkgs; [
     brave
+    brightnessctl
     dunst
     firefox # Good to have a backup
     git
@@ -64,6 +65,7 @@
     parted
     pavucontrol
     pipewire
+    playerctl
     polkit-kde-agent
     procps
     python3
