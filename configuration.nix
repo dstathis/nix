@@ -71,6 +71,7 @@
     python3
     spotify
     vim
+    vlc
     waybar
     wget
     wireplumber
