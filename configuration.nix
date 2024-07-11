@@ -72,6 +72,7 @@
     python3
     signal-desktop
     spotify
+    unrar-wrapper
     vim
     vlc
     waybar
