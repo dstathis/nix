@@ -62,6 +62,7 @@
     libreoffice
     networkmanagerapplet
     nwg-displays
+    nzbget
     parted
     pavucontrol
     pipewire
