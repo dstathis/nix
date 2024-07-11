@@ -69,6 +69,7 @@
     polkit-kde-agent
     procps
     python3
+    signal-desktop
     spotify
     vim
     vlc
