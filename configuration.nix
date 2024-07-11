@@ -78,6 +78,11 @@
     wlr-randr
     wofi
     xdg-desktop-portal-hyprland
+
+    # PIA https://github.com/pia-foss/manual-connections
+    curl
+    jq
+    wireguard-tools
   ];
 
   security.sudo.wheelNeedsPassword = false;
