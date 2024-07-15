@@ -72,6 +72,7 @@
     python3
     signal-desktop
     spotify
+    swaylock
     unrar
     vim
     vlc
