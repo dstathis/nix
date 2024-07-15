@@ -15,11 +15,18 @@ def run(cmd):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--rebuild', action='store_true', help='Rebuild the nix config.')
+    parser.add_argument('--tz', help='Set the timezone.')
     return parser.parse_args()
 
 def main():
     args = parse_args()
     run('cp configuration.nix /etc/nixos/configuration.nix')
+    if args.tz:
+        with open('/etc/nixos/configuration.nix', 'r') as f:
+            conf = f.read()
+        conf = conf.replace('Europe/Athens', args.tz)
+        with open('/etc/nixos/configuration.nix', 'w') as f:
+            f.write(conf)
     if args.rebuild:
         run('nixos-rebuild switch')
     run(f'curl -fLo home/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')

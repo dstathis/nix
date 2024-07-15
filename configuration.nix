@@ -38,9 +38,6 @@
     openFirewall = true;
   };
 
-  # Time
-  services.automatic-timezoned.enable = true;
-
   # Apps
   nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true;
