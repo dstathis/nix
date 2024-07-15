@@ -50,6 +50,7 @@
   networking.firewall.trustedInterfaces = [ "lxdbr0" ];
 
   environment.systemPackages = with pkgs; [
+    blueman
     brave
     brightnessctl
     dunst
