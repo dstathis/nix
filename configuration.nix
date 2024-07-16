@@ -63,7 +63,6 @@
     libreoffice
     networkmanagerapplet
     nwg-displays
-    nzbget
     parted
     pavucontrol
     pipewire
@@ -83,6 +82,11 @@
     wlr-randr
     wofi
     xdg-desktop-portal-hyprland
+
+    # NZB
+    nzbget
+    radarr
+    sonarr
 
     # PIA https://github.com/pia-foss/manual-connections
     curl
