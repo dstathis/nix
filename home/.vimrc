@@ -31,9 +31,13 @@ autocmd FileType python setlocal ts=8 sts=4 sw=4 expandtab smarttab
 autocmd FileType bash setlocal ts=8 sts=4 sw=4 expandtab smarttab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab smarttab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab smarttab
+autocmd FileType jsonc setlocal ts=2 sts=2 sw=2 expandtab smarttab
 
 " Remap hjkl -> jkl;
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
+
+let g:vim_json_conceal=0
