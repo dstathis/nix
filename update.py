@@ -36,6 +36,8 @@ def main():
         # Change to Path.walk with python 3.12
         for dirpath, dirnames, filenames in os.walk(home):
             for filename in filenames:
+                if filename.endswith(".swp"):
+                    continue
                 filepath = pathlib.Path(dirpath) / filename
                 relpath = filepath.relative_to(home)
                 dest  = userhome / relpath
