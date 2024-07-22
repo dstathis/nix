@@ -13,7 +13,7 @@
   # Networking
   networking.hostName = "enterprise";
   networking.networkmanager.enable = true;
-  time.timeZone = "Europe/Athens";
+  time.timeZone = "{{ timezone }}";
 
   # Window Manager
   services.xserver.enable = true;
@@ -92,6 +92,10 @@
     curl
     jq
     wireguard-tools
+  ];
+
+  fonts.packages = with pkgs; [
+    font-awesome
   ];
 
   security.sudo.wheelNeedsPassword = false;

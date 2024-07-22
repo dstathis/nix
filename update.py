@@ -20,13 +20,18 @@ def parse_args():
 
 def main():
     args = parse_args()
-    run('cp configuration.nix /etc/nixos/configuration.nix')
+    tz = 'Europe/Athens'
+    tzfile = pathlib.Path('/home/dylan/.tz')
+    if tzfile.is_file():
+        with tzfile.open() as f:
+            tz = f.read()
     if args.tz:
-        with open('/etc/nixos/configuration.nix', 'r') as f:
-            conf = f.read()
-        conf = conf.replace('Europe/Athens', args.tz)
-        with open('/etc/nixos/configuration.nix', 'w') as f:
-            f.write(conf)
+        tz = args.tz
+    with open('configuration.nix', 'r') as f:
+        conf = f.read()
+    conf = conf.replace('{{ timezone }}', tz)
+    with open('/etc/nixos/configuration.nix', 'w') as f:
+        f.write(conf)
     if args.rebuild:
         run('nixos-rebuild switch')
     run(f'curl -fLo home/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
