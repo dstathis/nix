@@ -44,6 +44,21 @@
   programs.virt-manager.enable = true;
   programs.steam.enable = true;
 
+  # Laptop
+  services.thermald.enable = true;
+  services.thermald.ignoreCpuidCheck = true;
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
+
   # VMs
   virtualisation.lxd.enable = true;
   virtualisation.libvirtd.enable = true;
@@ -70,6 +85,7 @@
     polkit-kde-agent
     procps
     python3
+    ripgrep
     signal-desktop
     spotify
     swaylock
