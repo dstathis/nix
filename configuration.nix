@@ -14,6 +14,7 @@
   networking.hostName = "enterprise";
   networking.networkmanager.enable = true;
   time.timeZone = "{{ timezone }}";
+  services.openssh.enable = true;
 
   # Window Manager
   services.xserver.enable = true;
