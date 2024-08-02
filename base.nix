@@ -53,6 +53,7 @@
     git
     gnome.gnome-screenshot
     gnupg
+    joplin-desktop
     killall
     kitty
     libreoffice
