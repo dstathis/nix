@@ -1,17 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
   # Boot Config
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = "enterprise";
   networking.networkmanager.enable = true;
   time.timeZone = "{{ timezone }}";
   services.openssh.enable = true;

@@ -5,6 +5,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import sys
 
 
 def run(cmd):
@@ -16,6 +17,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--rebuild', action='store_true', help='Rebuild the nix config.')
     parser.add_argument('--tz', help='Set the timezone.')
+    parser.add_argument('--hostname', help='Set the hostname.')
     return parser.parse_args()
 
 def main():
@@ -27,11 +29,23 @@ def main():
             tz = f.read()
     if args.tz:
         tz = args.tz
-    with open('configuration.nix', 'r') as f:
+    hostnamefile = pathlib.Path('/home/dylan/.hostname')
+    hostname = None
+    if hostnamefile.is_file():
+        with hostnamefile.open() as f:
+            hostname = f.read()
+    if args.hostname:
+        hostname = args.hostname
+    if hostname is None:
+        sys.stderr.write('Please provide hostname.\n')
+        sys.stderr.flush()
+        sys.exit(1)
+    with open('base.nix', 'r') as f:
         conf = f.read()
     conf = conf.replace('{{ timezone }}', tz)
-    with open('/etc/nixos/configuration.nix', 'w') as f:
+    with open('/etc/nixos/base.nix', 'w') as f:
         f.write(conf)
+    shutil.copy(f'{hostname}.nix', '/etc/nixos/configuration.nix')
     if args.rebuild:
         run('nixos-rebuild switch')
     run(f'curl -fLo home/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
