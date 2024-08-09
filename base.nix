@@ -59,6 +59,7 @@
     kitty
     libreoffice
     networkmanagerapplet
+    nmap
     nwg-displays
     parted
     pavucontrol
