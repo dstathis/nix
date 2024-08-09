@@ -53,6 +53,7 @@
     git
     gnome.gnome-screenshot
     gnupg
+    grim
     joplin-desktop
     killall
     kitty
@@ -68,6 +69,7 @@
     python3
     ripgrep
     signal-desktop
+    slurp
     spotify
     swaylock
     unrar
