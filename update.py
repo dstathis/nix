@@ -49,6 +49,7 @@ def main():
     if args.rebuild:
         run('nixos-rebuild switch')
     run(f'curl -fLo home/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    run('chown -R ${USER}:$(id -g -n) home/.vim')
     home = pathlib.Path('home')
     for user in ('dylan', 'c'):
         userhome = pathlib.Path('/home') / user
