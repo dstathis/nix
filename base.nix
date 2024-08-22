@@ -101,6 +101,8 @@
     wireguard-tools
   ];
 
+  services.tailscale.enable = true;
+
   fonts.packages = with pkgs; [
     font-awesome
   ];
