@@ -18,11 +18,11 @@
   # Users
   users.users.dylan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "lxd" "libvirtd" ];
+    extraGroups = [ "wheel" "lxd" "libvirtd" "docker" ];
   };
   users.users.c = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "lxd" "libvirtd" ];
+    extraGroups = [ "wheel" "lxd" "libvirtd" "docker" ];
   };
 
   # Printing
@@ -49,6 +49,7 @@
   # VMs
   virtualisation.lxd.enable = true;
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   networking.firewall.trustedInterfaces = [ "lxdbr0" ];
 
   environment.systemPackages = with pkgs; [
