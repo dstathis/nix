@@ -45,6 +45,10 @@
   programs.hyprland.enable = true;
   programs.virt-manager.enable = true;
   programs.steam.enable = true;
+  programs.vim = {
+    defaultEditor = true;
+    package = pkgs.vim;
+  };
 
   # VMs
   virtualisation.lxd.enable = true;
