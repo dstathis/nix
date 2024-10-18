@@ -61,6 +61,7 @@
     brave
     brightnessctl
     dunst
+    element-desktop
     firefox # Good to have a backup
     git
     gnome.gnome-screenshot
