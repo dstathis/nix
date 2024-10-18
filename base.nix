@@ -60,6 +60,7 @@
     blueman
     brave
     brightnessctl
+    discord
     dunst
     element-desktop
     firefox # Good to have a backup
