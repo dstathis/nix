@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
-{
+
+let
+  unstable = import <nixos-unstable> {};
+in {
   # Boot Config
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -69,8 +72,10 @@
     gnupg
     grim
     joplin-desktop
+    unstable.juju
     killall
     kitty
+    kubectl
     libreoffice
     networkmanagerapplet
     nmap
