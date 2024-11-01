@@ -76,6 +76,7 @@ in {
     brave
     brightnessctl
     discord
+    drawio
     dunst
     element-desktop
     firefox # Good to have a backup
@@ -91,7 +92,7 @@ in {
     libreoffice
     networkmanagerapplet
     nmap
-    nwg-displays
+    unstable.nwg-displays
     parted
     pavucontrol
     pipewire
