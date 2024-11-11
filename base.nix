@@ -84,6 +84,7 @@ in {
     dunst
     element-desktop
     firefox # Good to have a backup
+    gh
     git
     gnome.gnome-screenshot
     gnupg
