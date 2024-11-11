@@ -64,6 +64,10 @@ in {
     defaultEditor = true;
     package = pkgs.vim;
   };
+  programs.zsh = {
+    enable = true;
+    ohMyZsh.enable = true;
+  };
 
   # VMs
   virtualisation.lxd.enable = true;
