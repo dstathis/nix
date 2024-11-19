@@ -79,6 +79,7 @@ in {
     blueman
     brave
     brightnessctl
+    cifs-utils
     discord
     drawio
     dunst
