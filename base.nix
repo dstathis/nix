@@ -71,9 +71,12 @@ in {
 
   # VMs
   virtualisation.lxd.enable = true;
-  virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
   networking.firewall.trustedInterfaces = [ "lxdbr0" ];
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.swtpm.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     blueman
