@@ -8,3 +8,10 @@ if [ ! -z "$(\ls ~/.aliases.d)" ]; then
 		. ${f}
 	done
 fi
+
+# Source custom bashrc
+if [ ! -z "$(\ls ~/.bashrc.d)" ]; then
+	for f in ~/.bashrc.d/*; do
+		. ${f}
+	done
+fi
