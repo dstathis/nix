@@ -115,6 +115,7 @@ in {
     spotify
     swaylock
     unrar
+    unstable.uv
     vim
     vlc
     waybar
