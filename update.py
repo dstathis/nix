@@ -48,11 +48,11 @@ def main():
     shutil.copy(f'{hostname}.nix', '/etc/nixos/configuration.nix')
     if args.rebuild:
         run('nixos-rebuild switch')
-    run(f'curl -fLo home/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
-    run('chown -R ${USER}:$(id -g -n) home/.vim')
     home = pathlib.Path('home')
     for user in ('dylan', 'c'):
         userhome = pathlib.Path('/home') / user
+        run(f'curl -fLo {userhome}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+        run(f'chown -R {user}:users {userhome}/.vim')
         # Change to Path.walk with python 3.12
         for dirpath, dirnames, filenames in os.walk(home):
             for filename in filenames:
