@@ -92,6 +92,7 @@ in {
     git
     gnome.gnome-screenshot
     gnupg
+    go
     grim
     joplin-desktop
     unstable.juju
