@@ -8,18 +8,6 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # https://github.com/tailscale/tailscale/issues/13863
-  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_6.override {
-    argsOverride = rec {
-      src = pkgs.fetchurl {
-        url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-        sha256 = "90gS946ImSxBZDTLEHY54TpVHbr/NruQ1jRqsWq3GpU=";
-      };
-      version = "6.6.56";
-      modDirVersion = "6.6.56";
-    };
-  });
-
   # Networking
   networking.networkmanager.enable = true;
   time.timeZone = "{{ timezone }}";
