@@ -78,7 +78,7 @@ in {
     firefox # Good to have a backup
     gh
     git
-    gnome.gnome-screenshot
+    gnome-screenshot
     gnupg
     go
     grim
@@ -113,11 +113,6 @@ in {
     wlr-randr
     wofi
     xdg-desktop-portal-hyprland
-
-    # NZB
-    nzbget
-    radarr
-    sonarr
 
     # PIA https://github.com/pia-foss/manual-connections
     curl
