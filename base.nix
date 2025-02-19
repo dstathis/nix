@@ -72,6 +72,7 @@ in {
     brightnessctl
     cifs-utils
     discord
+    drawing
     drawio
     dunst
     element-desktop
