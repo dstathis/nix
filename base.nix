@@ -89,6 +89,7 @@ in {
     kitty
     kubectl
     libreoffice
+    mosh
     networkmanagerapplet
     nmap
     unstable.nwg-displays
