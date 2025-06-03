@@ -71,6 +71,7 @@ in {
     brave
     brightnessctl
     cifs-utils
+    code-cursor
     discord
     drawing
     drawio
