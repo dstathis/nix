@@ -67,6 +67,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    appimage-run
     blueman
     brave
     brightnessctl
