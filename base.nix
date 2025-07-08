@@ -98,7 +98,7 @@ in {
     pavucontrol
     pipewire
     playerctl
-    polkit-kde-agent
+    hyprpolkitagent
     procps
     python3
     ripgrep
