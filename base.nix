@@ -49,6 +49,7 @@ in {
   programs.virt-manager.enable = true;
   programs.steam.enable = true;
   programs.vim = {
+    enable = true;
     defaultEditor = true;
     package = pkgs.vim;
   };
