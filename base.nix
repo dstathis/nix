@@ -22,11 +22,11 @@ in {
   # Users
   users.users.dylan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "lxd" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "libvirtd" "docker" ];
   };
   users.users.c = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "lxd" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "libvirtd" "docker" ];
   };
 
   # Printing
@@ -60,11 +60,7 @@ in {
   };
 
   # VMs
-  virtualisation.lxd.enable = true;
-  # revert to stable when fixed: https://github.com/NixOS/nixpkgs/issues/422385#issuecomment-3049980409
-  virtualisation.lxd.package = unstable.lxd-lts;
   virtualisation.docker.enable = true;
-  networking.firewall.trustedInterfaces = [ "lxdbr0" ];
   virtualisation.libvirtd = {
     enable = true;
     qemu.swtpm.enable = true;
