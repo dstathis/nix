@@ -89,7 +89,6 @@ in {
     go
     grim
     joplin-desktop
-    unstable.juju
     killall
     kitty
     kubectl
