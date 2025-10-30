@@ -44,6 +44,9 @@ in {
     openFirewall = true;
   };
 
+  # VPN
+  services.expressvpn.enable = true;
+
   # Apps
   nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true;
@@ -77,6 +80,7 @@ in {
     drawio
     dunst
     element-desktop
+    expressvpn
     firefox # Good to have a backup
     gh
     git
