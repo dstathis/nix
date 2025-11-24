@@ -82,6 +82,7 @@ in {
     element-desktop
     expressvpn
     firefox # Good to have a backup
+    gcc
     gh
     git
     gnome-screenshot
