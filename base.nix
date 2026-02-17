@@ -120,6 +120,7 @@ in {
     unstable.uv
     vim
     vlc
+    unstable.vscode
     waybar
     wget
     wireplumber
