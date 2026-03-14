@@ -92,6 +92,7 @@ in {
     gh
     git
     gnome-screenshot
+    gnumake
     gnupg
     go
     grim
