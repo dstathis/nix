@@ -2,7 +2,7 @@
 
 
 let
-  unstable = import <nixos-unstable> {};
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   # Boot Config
   boot.loader.systemd-boot.enable = true;
