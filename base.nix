@@ -118,6 +118,7 @@ in {
     spotify
     swaylock
     unrar
+    unzip
     unstable.uv
     vim
     vlc
