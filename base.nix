@@ -17,7 +17,7 @@ in {
   # Window Manager
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Users
   users.users.dylan = {
