@@ -81,6 +81,7 @@ in {
     brave
     brightnessctl
     cifs-utils
+    cowsay
     discord
     drawing
     drawio

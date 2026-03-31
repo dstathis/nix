@@ -1,3 +1,3 @@
-echo "Για σου Ντήλαν"
+cowsay "Για σου Ντήλαν"
 
 export EDITOR=vim
