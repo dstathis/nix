@@ -1,7 +1,12 @@
 [user]
 	name = Dylan Stephano-Shachter
-	email = dylan@theone.ninja
-	signingkey = 059C7AE8654E4877BDF117A06CB7F27DB4F4C598
+	#Set per repo
+	#
+	#email = dylan@theone.ninja
+	#signingkey = 059C7AE8654E4877BDF117A06CB7F27DB4F4C598
+	#
+	#email = dylan.stephano-shachter@canonical.com
+	#signingkey = E32DC894035A5AD81AC6DD81462D65B6C1111786
 [alias]
         cc      = commit -m
 	st	= status
