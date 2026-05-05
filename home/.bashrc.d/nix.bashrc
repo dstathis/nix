@@ -1,3 +1,3 @@
-cowsay "Για σου Ντήλαν"
+cowsay "Γειά σου Ντήλαν"
 
 export EDITOR=vim
