@@ -18,38 +18,46 @@ def parse_args():
     parser.add_argument('--rebuild', action='store_true', help='Rebuild the nix config.')
     parser.add_argument('--tz', help='Set the timezone.')
     parser.add_argument('--hostname', help='Set the hostname.')
+    parser.add_argument('--ubuntu', action='store_true', help='Run on ubuntu, skipping all the nix stuff')
     return parser.parse_args()
 
 def main():
     args = parse_args()
-    tz = 'Europe/Athens'
-    tzfile = pathlib.Path('/home/dylan/.tz')
-    if tzfile.is_file():
-        with tzfile.open() as f:
-            tz = f.read()
-    if args.tz:
-        tz = args.tz
-    hostnamefile = pathlib.Path('/home/dylan/.hostname')
-    hostname = None
-    if hostnamefile.is_file():
-        with hostnamefile.open() as f:
-            hostname = f.read()
-    if args.hostname:
-        hostname = args.hostname
-    if hostname is None:
-        sys.stderr.write('Please provide hostname.\n')
-        sys.stderr.flush()
-        sys.exit(1)
-    with open('base.nix', 'r') as f:
-        conf = f.read()
-    conf = conf.replace('{{ timezone }}', tz)
-    with open('/etc/nixos/base.nix', 'w') as f:
-        f.write(conf)
-    shutil.copy(f'{hostname}.nix', '/etc/nixos/configuration.nix')
-    if args.rebuild:
-        run('nixos-rebuild switch')
+    if not args.ubuntu:
+        tz = 'Europe/Athens'
+        tzfile = pathlib.Path('/home/dylan/.tz')
+        if tzfile.is_file():
+            with tzfile.open() as f:
+                tz = f.read()
+        if args.tz:
+            tz = args.tz
+        hostnamefile = pathlib.Path('/home/dylan/.hostname')
+        hostname = None
+        if hostnamefile.is_file():
+            with hostnamefile.open() as f:
+                hostname = f.read()
+        if args.hostname:
+            hostname = args.hostname
+        if hostname is None:
+            sys.stderr.write('Please provide hostname.\n')
+            sys.stderr.flush()
+            sys.exit(1)
+        with open('base.nix', 'r') as f:
+            conf = f.read()
+        conf = conf.replace('{{ timezone }}', tz)
+        with open('/etc/nixos/base.nix', 'w') as f:
+            f.write(conf)
+        shutil.copy(f'{hostname}.nix', '/etc/nixos/configuration.nix')
+        if args.rebuild:
+            run('nixos-rebuild switch')
+    else:
+        run('apt-get update')
+        run('apt-get install -y $(cat debs.txt)')
+        with open('snaps.txt') as f:
+            for line in f.readlines():
+                run(f'snap install {line}')
     home = pathlib.Path('home')
-    for user in ('dylan', 'c'):
+    for user in ('dylan.stephano-shachter@canonical.com',):
         userhome = pathlib.Path('/home') / user
         run(f'curl -fLo {userhome}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
         run(f'chown -R {user}:users {userhome}/.vim')
@@ -61,8 +69,9 @@ def main():
                 filepath = pathlib.Path(dirpath) / filename
                 relpath = filepath.relative_to(home)
                 dest  = userhome / relpath
+                print(dest)
                 dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.chown(dest.parent, user=user, group='users')
+                shutil.chown(dest.parent, user=user, group=user)
                 shutil.copy(filepath, dest)
                 shutil.chown(dest, user=user, group='users')
     run('kill -USR2 $(pgrep waybar)')

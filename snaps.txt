@@ -1,0 +1,6 @@
+astral-uv --classic
+brave
+code --classic
+discord
+joplin-desktop
+signal-desktop
