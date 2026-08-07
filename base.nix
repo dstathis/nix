@@ -83,6 +83,7 @@ in {
     brave
     brightnessctl
     cifs-utils
+    claude-code
     cowsay
     discord
     drawing
