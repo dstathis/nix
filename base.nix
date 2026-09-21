@@ -29,7 +29,7 @@ in {
   };
   users.users.c = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "libvirtd" "docker" "networkmanager" ];
   };
 
   # Printing
