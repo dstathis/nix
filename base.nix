@@ -25,7 +25,7 @@ in {
   # Users
   users.users.dylan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "libvirtd" "docker" "networkmanager" ];
   };
   users.users.c = {
     isNormalUser = true;
