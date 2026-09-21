@@ -11,6 +11,9 @@ in {
 
   # Networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = with pkgs; [
+    networkmanager-openvpn
+  ];
   time.timeZone = "{{ timezone }}";
   services.openssh.enable = true;
 
